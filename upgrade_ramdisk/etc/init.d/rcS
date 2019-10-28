@@ -1,0 +1,51 @@
+#! /bin/sh
+
+/bin/mount -a
+
+/bin/mkdir /dev/pts
+
+/bin/mount -t devpts devpts /dev/pts
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug #//USB自动挂载需要
+
+/sbin/mdev -s         #在/dev下自动创建设备文件节点
+
+HN=`cat /proc/board | tr A-Z a-z`
+if [ -e /dev/mtd0 ]; then
+    # attach rootfs partition
+    if [ ! -c /dev/ubi0 ]; then
+        ubiattach -p /dev/mtd9 -O 1024
+    fi
+    if [ ! -c /dev/ubi0_0 ]; then
+        ubimkvol /dev/ubi0 -N rootfs -m
+    fi
+    if [ "$HN" == "wise2834" ] || [ "$HN" == "adam6750" ]; then
+        # attach data partition
+        if [ ! -c /dev/ubi1 ]; then
+            ubiattach -p /dev/mtd10 -O 1024
+        fi
+        if [ ! -c /dev/ubi1_0 ]; then
+            ubimkvol /dev/ubi1 -N data -m
+        fi    
+        mount -t ubifs ubi0_0 /media/rootfs
+        mount -t ubifs ubi1_0 /media/data
+    else
+        # attach recovery partition
+        if [ ! -c /dev/ubi1 ]; then
+            ubiattach -p /dev/mtd10 -O 1024
+        fi
+        if [ ! -c /dev/ubi1_0 ]; then
+            ubimkvol /dev/ubi1 -N recovery -m
+        fi    
+        # attach data partition
+        if [ ! -c /dev/ubi2 ]; then
+            ubiattach -p /dev/mtd11 -O 1024
+        fi
+        if [ ! -c /dev/ubi2_0 ]; then
+            ubimkvol /dev/ubi2 -N data -m
+        fi
+        mount -t ubifs ubi0_0 /media/rootfs
+        mount -t ubifs ubi1_0 /media/recovery
+        mount -t ubifs ubi2_0 /media/data
+    fi
+fi

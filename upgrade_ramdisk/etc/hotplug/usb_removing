@@ -1,0 +1,4 @@
+#!/bin/sh
+sync;sync;
+umount -l /media/$MDEV
+rm -rf /media/$MDEV

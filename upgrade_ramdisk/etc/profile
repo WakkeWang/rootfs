@@ -1,0 +1,29 @@
+# /etc/profile: system-wide .profile file for the Bourne shells
+
+echo
+echo -n "Processing /etc/profile... "
+# no-op
+PATH=/bin:/sbin:/usr/bin:/usr/sbin          #//可执行程序 环境变量
+export LD_LIBRARY_PATH=/lib:/usr/lib        #//动态链接库 环境变量
+
+/bin/hostname AdvRecovery
+
+USER="`id -un`"
+
+LOGNAME=$USER
+
+HOSTNAME='/bin/hostname'
+
+PS1='[\u@\h:\w]# '                          #//显示主机名、当前路径等信息：
+
+alias vim='vi'
+
+export LS_OPTIONS='--color=auto'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+
+echo "Done"
+echo
+
+/bin/sh /root/upgrade.sh
