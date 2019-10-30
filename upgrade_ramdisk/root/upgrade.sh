@@ -163,6 +163,7 @@ a
 w
 END
 fi
+sleep 2
 
 echo "Partitioning Boot"
 mkfs.vfat -F 32 -n "boot" ${DEVICE}p1
@@ -170,13 +171,15 @@ mkfs.vfat -F 32 -n "boot" ${DEVICE}p1
 echo "Partitioning Rootfs"
 mkfs.ext3 -F -L "rootfs" ${DEVICE}p2
 
-echo "Partitioning recovery"
+echo "Partitioning Recovery"
 mkfs.ext3 -F -L "recovery" ${DEVICE}p3
 
 echo "Partitioning Data"
 mkfs.ext3 -F -L "data" ${DEVICE}p4
 
 sync && sync
+
+umount -f ${DEVICE}p* 2>/dev/null
 
 mount -t vfat ${DEVICE}p1 /media/${DEVICENAME}p1/
 mount -t ext3 ${DEVICE}p2 /media/${DEVICENAME}p2/
@@ -301,8 +304,8 @@ if [ -f "/media/${dev}/${configfile}" ]; then
     esac 
     done < /media/${dev}/${configfile}
 
-    if [ "${dev}" = "mmcblk0p3" ]; then
-        echo_msg "can't partition own for ${dev}!"
+    if [ ${dev:0:7} = mmcblk0 ]; then
+        echo_msg "can't create partition own for ${dev}!"
         advpartition=n
     fi
 else
@@ -405,7 +408,7 @@ else
     exit 1
 fi
 
-if [ "$advfactory" = "y" ]; then                                
+if [ "$advpartition" = "y" ]; then                                
     if [ `is_nand_device` = "no" ]; then
         echo_msg "create partitions..."
         create_parts mmcblk0
