@@ -1,0 +1,25 @@
+cpu=imx6
+product_name=ecu1254
+disk_type=mmc
+partition_label=mbr
+partition_num=4
+
+# the first partition is boot
+partition_boot=1
+
+part_p1=40M fat32 boot
+part_p2=2500M ext4 rootfs
+part_p3=460M ext4 recovery
+part_p4=remaining ext3 data
+
+rootfs_file=rootfs.tar.gz
+
+external_update_dev=mmcblk1p1
+internal_update_dev=mmcblk3p3
+
+partdevice=mmcblk3
+bootdev=mmcblk3p1
+rootdev=mmcblk3p2
+recoverydev=mmcblk3p3
+datadev=mmcblk3p4
+

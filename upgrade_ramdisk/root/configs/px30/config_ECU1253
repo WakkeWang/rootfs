@@ -1,0 +1,25 @@
+cpu=px30
+product_name=ecu1253
+disk_type=emmc
+partition_label=gpt
+partition_num=7
+
+part_p1=4M ext4 uboot
+part_p2=4M ext4 trust
+part_p3=4M ext4 misc
+part_p4=64M fat32 boot
+part_p5=2500M ext4 rootfs
+part_p6=460M ext4 recovery
+part_p7=remaing ext4 data
+
+rootfs_file=rootfs.tar.gz
+
+external_update_dev=mmcblk0p1
+internal_update_dev=mmcblk1p6
+third_update_dev=mmcblk0p4
+
+partdevice=mmcblk1
+bootdev=mmcblk1p4
+rootdev=mmcblk1p5
+recoverydev=mmcblk1p6
+datadev=mmcblk1p7

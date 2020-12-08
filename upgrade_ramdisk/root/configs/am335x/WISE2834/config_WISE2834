@@ -1,0 +1,17 @@
+cpu=am335x
+product_name=wise2834
+disk_type=nand
+
+rootfs_file=rootfs.tar.gz
+
+rootdev=rootfs
+datadev=data
+
+mtd_rfs_num=9
+mtd_data_num=10
+
+ubi_root_num=0
+ubi_data_num=1
+
+external_update_dev=mmcblk0p1
+internal_update_dev=recovery

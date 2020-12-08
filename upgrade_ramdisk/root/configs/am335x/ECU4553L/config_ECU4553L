@@ -1,0 +1,24 @@
+cpu=am335x
+product_name=ecu4553l
+disk_type=emmc
+partition_label=mbr
+partition_num=4
+
+# the first partition is boot
+partition_boot=1
+
+part_p1=40M fat32 boot
+part_p2=2500M ext3 rootfs
+part_p3=460M ext3 recovery
+part_p4=remaining ext3 data
+
+rootfs_file=rootfs.tar.gz
+
+partdevice=mmcblk1
+bootdev=mmcblk1p1
+rootdev=mmcblk1p2
+recoverydev=mmcblk1p3
+datadev=mmcblk1p4
+
+external_update_dev=mmcblk0p1
+internal_update_dev=mmcblk1p3
