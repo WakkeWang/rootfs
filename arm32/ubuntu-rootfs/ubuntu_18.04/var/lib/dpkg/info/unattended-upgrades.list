@@ -1,0 +1,13 @@
+/etc
+/etc/init.d
+/etc/init.d/unattended-upgrades
+/etc/kernel
+/etc/kernel/postinst.d
+/etc/kernel/postinst.d/unattended-upgrades
+/etc/logrotate.d
+/etc/logrotate.d/unattended-upgrades
+/etc/pm
+/etc/pm/sleep.d
+/etc/pm/sleep.d/10_unattended-upgrades-hibernate
+/etc/update-motd.d
+/etc/update-motd.d/92-unattended-upgrades

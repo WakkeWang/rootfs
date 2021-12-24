@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ -n "$USEPEERDNS" -a -f /etc/ppp/resolv.conf ]; then
+	rm -f /etc/ppp/resolv.prev
+	if [ -f /etc/resolv.conf ]; then
+		cp /etc/resolv.conf /etc/ppp/resolv.prev
+		grep domain /etc/ppp/resolv.prev > /etc/resolv.conf
+		grep search /etc/ppp/resolv.prev >> /etc/resolv.conf
+		cat /etc/ppp/resolv.conf >> /etc/resolv.conf
+	else
+		cat /etc/ppp/resolv.conf > /etc/resolv.conf
+	fi
+	chmod a+r /etc/resolv.conf
+	sed -i "/ppp0 /d" /tmp/dnsorder.conf
+	sed -e "s/nameserver/ppp0/g" /etc/ppp/resolv.conf >> /tmp/dnsorder.conf
+	if [ -x /home/sysuser/util/fixroute ]; then
+		/home/sysuser/util/fixroute
+	elif [ -x /home/root/util/fixroute ]; then
+		/home/root/util/fixroute
+	fi
+
+fi
+

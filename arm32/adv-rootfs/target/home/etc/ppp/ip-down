@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -n "$USEPEERDNS" -a -f /etc/ppp/resolv.conf ]; then
+	if [ -f /etc/ppp/resolv.prev ]; then
+		cat /etc/ppp/resolv.prev > /etc/resolv.conf
+	else
+		cat /dev/null > /etc/resolv.conf
+	fi
+	sed -i "/ppp0 /d" /tmp/dnsorder.conf
+	if [ -x /home/sysuser/util/fixroute ]; then
+		/home/sysuser/util/fixroute
+	elif [ -x /home/root/util/fixroute ]; then
+		/home/root/util/fixroute
+	fi
+
+fi
+

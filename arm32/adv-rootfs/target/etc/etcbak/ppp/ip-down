@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$1" == "ppp5" ];then
+	server_ip=`cat /etc/ppp/l2tp_server_ip`
+	route del -net $server_ip/32
+	rm /etc/ppp/l2tp_server_ip
+fi
+
+if [ -n "$USEPEERDNS" -a -f /etc/ppp/resolv.conf ]; then
+	if [ -f /etc/ppp/resolv.prev ]; then
+		cat /etc/ppp/resolv.prev > /etc/resolv.conf
+	else
+		cat /dev/null > /etc/resolv.conf
+	fi
+	sed -i "/$1 /d" /tmp/dnsorder.conf
+	if [ -x /home/sysuser/util/fixroute ]; then
+		/home/sysuser/util/fixroute
+	elif [ -x /home/root/util/fixroute ]; then
+		/home/root/util/fixroute
+	fi
+fi
+

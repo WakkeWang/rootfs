@@ -1,0 +1,51 @@
+update-alternatives 2016-07-19 20:53:20: run with --quiet --install /usr/bin/awk awk /usr/bin/mawk 5 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/mawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/mawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/mawk.1.gz
+update-alternatives 2016-07-19 20:53:20: link group awk updated to point to /usr/bin/mawk
+update-alternatives 2016-07-19 20:53:30: run with --quiet --install /usr/bin/awk awk /usr/bin/mawk 5 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/mawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/mawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/mawk.1.gz
+update-alternatives 2016-07-19 20:53:34: run with --install /usr/sbin/rmt rmt /usr/sbin/rmt-tar 50 --slave /usr/share/man/man8/rmt.8.gz rmt.8.gz /usr/share/man/man8/rmt-tar.8.gz
+update-alternatives 2016-07-19 20:53:34: link group rmt updated to point to /usr/sbin/rmt-tar
+update-alternatives 2016-07-19 20:53:37: run with --install /usr/share/man/man7/builtins.7.gz builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz 10
+update-alternatives 2016-07-19 20:53:37: link group builtins.7.gz updated to point to /usr/share/man/man7/bash-builtins.7.gz
+update-alternatives 2016-07-19 20:53:37: run with --install /usr/bin/w w /usr/bin/w.procps 50 --slave /usr/share/man/man1/w.1.gz w.1.gz /usr/share/man/man1/w.procps.1.gz
+update-alternatives 2016-07-19 20:53:37: link group w updated to point to /usr/bin/w.procps
+update-alternatives 2016-07-19 20:53:38: run with --install /usr/bin/pager pager /bin/more 50 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/more.1.gz
+update-alternatives 2016-07-19 20:53:38: link group pager updated to point to /bin/more
+update-alternatives 2016-07-19 20:53:38: run with --install /usr/bin/pager pager /usr/bin/pg 10 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/pg.1.gz
+update-alternatives 2016-07-19 20:54:49: run with --remove builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz
+update-alternatives 2016-07-19 20:54:49: link group builtins.7.gz fully removed
+update-alternatives 2016-07-19 20:54:50: run with --install /usr/share/man/man7/builtins.7.gz builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz 10
+update-alternatives 2016-07-19 20:54:50: link group builtins.7.gz updated to point to /usr/share/man/man7/bash-builtins.7.gz
+update-alternatives 2016-07-19 20:54:52: run with --install /usr/bin/pager pager /bin/more 50 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/more.1.gz
+update-alternatives 2016-07-19 20:54:52: run with --install /usr/bin/pager pager /usr/bin/pg 10 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/pg.1.gz
+update-alternatives 2020-11-20 06:08:53: run with --force --install /etc/ld.so.conf.d/arm-linux-gnueabihf_EGL.conf arm-linux-gnueabihf_egl_conf /usr/lib/arm-linux-gnueabihf/mesa-egl/ld.so.conf 500
+update-alternatives 2020-11-20 06:08:53: link group arm-linux-gnueabihf_egl_conf updated to point to /usr/lib/arm-linux-gnueabihf/mesa-egl/ld.so.conf
+update-alternatives 2020-11-20 06:10:13: run with --install /usr/lib/arm-linux-gnueabihf/libtxc_dxtn.so libtxc-dxtn-arm-linux-gnueabihf /usr/lib/arm-linux-gnueabihf/libtxc_dxtn_s2tc.so.0 10
+update-alternatives 2020-11-20 06:10:13: link group libtxc-dxtn-arm-linux-gnueabihf updated to point to /usr/lib/arm-linux-gnueabihf/libtxc_dxtn_s2tc.so.0
+update-alternatives 2020-11-20 06:10:26: run with --install /etc/newt/palette newt-palette /etc/newt/palette.ubuntu 50
+update-alternatives 2020-11-20 06:10:26: link group newt-palette updated to point to /etc/newt/palette.ubuntu
+update-alternatives 2020-11-20 06:10:26: run with --install /etc/newt/palette newt-palette /etc/newt/palette.original 20
+update-alternatives 2020-11-20 06:11:32: run with --install /usr/bin/vim vim /usr/bin/vim.basic 30
+update-alternatives 2020-11-20 06:11:32: link group vim updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:32: run with --install /usr/bin/vimdiff vimdiff /usr/bin/vim.basic 30
+update-alternatives 2020-11-20 06:11:32: link group vimdiff updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:33: run with --install /usr/bin/rvim rvim /usr/bin/vim.basic 30
+update-alternatives 2020-11-20 06:11:33: link group rvim updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:33: run with --install /usr/bin/rview rview /usr/bin/vim.basic 30
+update-alternatives 2020-11-20 06:11:33: link group rview updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:33: run with --install /usr/bin/vi vi /usr/bin/vim.basic 30 --slave /usr/share/man/fr/man1/vi.1.gz vi.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/vi.1.gz vi.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/vi.1.gz vi.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/vi.1.gz vi.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/ja/man1/vi.1.gz vi.ja.1.gz /usr/share/man/ja/man1/vim.1.gz --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/share/man/man1/vim.1.gz
+update-alternatives 2020-11-20 06:11:33: link group vi updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:33: run with --install /usr/bin/view view /usr/bin/vim.basic 30 --slave /usr/share/man/fr/man1/view.1.gz view.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/view.1.gz view.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/view.1.gz view.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/view.1.gz view.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/ja/man1/view.1.gz view.ja.1.gz /usr/share/man/ja/man1/vim.1.gz --slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/vim.1.gz
+update-alternatives 2020-11-20 06:11:33: link group view updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:33: run with --install /usr/bin/ex ex /usr/bin/vim.basic 30 --slave /usr/share/man/fr/man1/ex.1.gz ex.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/ex.1.gz ex.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/ex.1.gz ex.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/ex.1.gz ex.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/ja/man1/ex.1.gz ex.ja.1.gz /usr/share/man/ja/man1/vim.1.gz --slave /usr/share/man/man1/ex.1.gz ex.1.gz /usr/share/man/man1/vim.1.gz
+update-alternatives 2020-11-20 06:11:33: link group ex updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:33: run with --install /usr/bin/editor editor /usr/bin/vim.basic 30 --slave /usr/share/man/fr/man1/editor.1.gz editor.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/editor.1.gz editor.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/editor.1.gz editor.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/editor.1.gz editor.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/ja/man1/editor.1.gz editor.ja.1.gz /usr/share/man/ja/man1/vim.1.gz --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/vim.1.gz
+update-alternatives 2020-11-20 06:11:33: link group editor updated to point to /usr/bin/vim.basic
+update-alternatives 2020-11-20 06:11:45: run with --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Adwaita/cursor.theme 90
+update-alternatives 2020-11-20 06:11:45: link group x-cursor-theme updated to point to /usr/share/icons/Adwaita/cursor.theme
+update-alternatives 2020-11-20 06:11:51: run with --quiet --install /usr/bin/pinentry pinentry /usr/bin/pinentry-gnome3 90 --slave /usr/share/man/man1/pinentry.1.gz pinentry.1.gz /usr/share/man/man1/pinentry-gnome3.1.gz
+update-alternatives 2020-11-20 06:11:51: link group pinentry updated to point to /usr/bin/pinentry-gnome3
+update-alternatives 2020-11-20 06:11:51: run with --quiet --install /usr/bin/pinentry-x11 pinentry-x11 /usr/bin/pinentry-gnome3 90 --slave /usr/share/man/man1/pinentry-x11.1.gz pinentry-x11.1.gz /usr/share/man/man1/pinentry-gnome3.1.gz
+update-alternatives 2020-11-20 06:11:51: link group pinentry-x11 updated to point to /usr/bin/pinentry-gnome3
+update-alternatives 2016-02-11 16:31:39: run with --install /usr/bin/ctags ctags /usr/bin/ctags-exuberant 30 --slave /usr/share/man/man1/ctags.1.gz ctags.1.gz /usr/share/man/man1/ctags-exuberant.1.gz
+update-alternatives 2016-02-11 16:31:39: link group ctags updated to point to /usr/bin/ctags-exuberant
+update-alternatives 2016-02-11 16:31:39: run with --install /usr/bin/etags etags /usr/bin/ctags-exuberant 10 --slave /usr/share/man/man1/etags.1.gz etags.1.gz /usr/share/man/man1/ctags-exuberant.1.gz
+update-alternatives 2016-02-11 16:31:39: link group etags updated to point to /usr/bin/ctags-exuberant

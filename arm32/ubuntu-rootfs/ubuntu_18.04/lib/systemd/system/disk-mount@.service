@@ -1,0 +1,9 @@
+[Unit]
+Description=Mount disk Drive on %f
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/local/bin/disk-mount.sh add %f
+ExecStop=/usr/local/bin/disk-mount.sh remove %f
+TimeoutSec=0

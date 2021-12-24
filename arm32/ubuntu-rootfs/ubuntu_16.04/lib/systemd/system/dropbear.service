@@ -1,0 +1,11 @@
+[Unit]
+Description=Just for dropbear SSH, dropbear.service
+
+[Service]
+ExecStart=/etc/init.d/dropbear start
+ExecStop=/etc/init.d/dropbear stop
+
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

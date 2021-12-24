@@ -1,0 +1,36 @@
+lease {
+  interface "eth0";
+  fixed-address 192.168.172.207;
+  option subnet-mask 255.255.255.0;
+  option dhcp-lease-time 86400;
+  option routers 192.168.172.1;
+  option dhcp-message-type 5;
+  option dhcp-server-identifier 192.168.172.1;
+  option domain-name-servers 192.168.172.1,8.8.8.8;
+  option dhcp-renewal-time 43200;
+  option dhcp-rebinding-time 75600;
+  option broadcast-address 192.168.172.255;
+  option host-name "adam3600";
+  option domain-name "lan";
+  renew 5 2016/02/12 04:02:37;
+  rebind 5 2016/02/12 13:28:52;
+  expire 5 2016/02/12 16:28:52;
+}
+lease {
+  interface "eth0";
+  fixed-address 192.168.172.207;
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.172.1;
+  option dhcp-lease-time 86400;
+  option dhcp-message-type 5;
+  option domain-name-servers 192.168.172.1,8.8.8.8;
+  option dhcp-server-identifier 192.168.172.1;
+  option dhcp-renewal-time 43200;
+  option broadcast-address 192.168.172.255;
+  option dhcp-rebinding-time 75600;
+  option host-name "adam3600";
+  option domain-name "lan";
+  renew 5 2016/02/12 01:42:43;
+  rebind 5 2016/02/12 13:28:42;
+  expire 5 2016/02/12 16:28:42;
+}

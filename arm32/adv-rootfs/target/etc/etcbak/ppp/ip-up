@@ -1,0 +1,41 @@
+#!/bin/sh
+
+if [ "$1" == "ppp5" ];then
+        default_gw=`route -n | sed -n '3p' | awk '{print $2}'`
+        default_eth=`route -n | sed -n '3p' | awk '{print $8}'`
+        if [ "$default_eth" == "ppp5" ];then
+                default_eth=`route -n | sed -n '4p' | awk '{print $8}'`
+                default_gw=`route -n | sed -n '4p' | awk '{print $2}'`
+        fi
+		server_ip=`cat /etc/ppp/l2tp_server_ip`
+		if ! route -n | grep "$server_ip" > /dev/null;then
+			if [ "$default_gw" == "0.0.0.0" ];then
+				route add -net $server_ip/32 dev $default_eth
+			else
+				route add -net $server_ip/32 gw $default_gw dev $default_eth
+			fi
+        	logger "add route : default_gw:$default_gw def_eth:$default_eth ser_ip:$server_ip"
+		fi
+fi
+
+if [ -n "$USEPEERDNS" -a -f /etc/ppp/resolv.conf ]; then
+	rm -f /etc/ppp/resolv.prev
+	if [ -f /etc/resolv.conf ]; then
+		cp /etc/resolv.conf /etc/ppp/resolv.prev
+		grep domain /etc/ppp/resolv.prev > /etc/resolv.conf
+		grep search /etc/ppp/resolv.prev >> /etc/resolv.conf
+		cat /etc/ppp/resolv.conf >> /etc/resolv.conf
+	else
+		cat /etc/ppp/resolv.conf > /etc/resolv.conf
+	fi
+	chmod a+r /etc/resolv.conf
+	sed -i "/$1 /d" /tmp/dnsorder.conf
+	sed -e "s/nameserver/$1/g" /etc/ppp/resolv.conf >> /tmp/dnsorder.conf
+	if [ -x /home/sysuser/util/fixroute ]; then
+		/home/sysuser/util/fixroute
+	elif [ -x /home/root/util/fixroute ]; then
+		/home/root/util/fixroute
+	fi
+
+fi
+

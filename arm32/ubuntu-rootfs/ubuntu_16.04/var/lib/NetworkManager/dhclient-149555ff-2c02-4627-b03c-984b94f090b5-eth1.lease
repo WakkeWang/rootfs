@@ -1,0 +1,176 @@
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:54:24;
+  rebind 2 2020/11/24 20:55:12;
+  expire 2 2020/11/24 20:55:27;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:55:15;
+  rebind 2 2020/11/24 20:56:09;
+  expire 2 2020/11/24 20:56:24;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:56:04;
+  rebind 2 2020/11/24 20:57:00;
+  expire 2 2020/11/24 20:57:15;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:56:53;
+  rebind 2 2020/11/24 20:57:50;
+  expire 2 2020/11/24 20:58:05;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:57:40;
+  rebind 2 2020/11/24 20:58:39;
+  expire 2 2020/11/24 20:58:54;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:58:29;
+  rebind 2 2020/11/24 20:59:25;
+  expire 2 2020/11/24 20:59:40;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 20:59:14;
+  rebind 2 2020/11/24 21:00:14;
+  expire 2 2020/11/24 21:00:29;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 21:00:08;
+  rebind 2 2020/11/24 21:00:59;
+  expire 2 2020/11/24 21:01:14;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 21:01:02;
+  rebind 2 2020/11/24 21:01:53;
+  expire 2 2020/11/24 21:02:08;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 21:01:57;
+  rebind 2 2020/11/24 21:02:47;
+  expire 2 2020/11/24 21:03:02;
+}
+lease {
+  interface "eth1";
+  fixed-address 172.21.67.71;
+  option subnet-mask 255.255.255.0;
+  option routers 172.21.67.1;
+  option dhcp-lease-time 120;
+  option dhcp-message-type 5;
+  option domain-name-servers 172.21.128.9,172.21.66.40;
+  option dhcp-server-identifier 172.21.66.41;
+  option dhcp-renewal-time 60;
+  option dhcp-rebinding-time 105;
+  option domain-name "ACN.ADVANTECH.CORP";
+  renew 2 2020/11/24 21:02:47;
+  rebind 2 2020/11/24 21:03:42;
+  expire 2 2020/11/24 21:03:57;
+}

@@ -1,0 +1,65 @@
+ 
+	mkdir -p "/var/volatile/cache"; 
+	chown root.root /var/volatile/cache || echo "Failed to set owner -root- for -/var/volatile/cache-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/volatile/cache || echo "Failed to set mode -0755- for -/var/volatile/cache-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/volatile/lock"; 
+	chown root.root /var/volatile/lock || echo "Failed to set owner -root- for -/var/volatile/lock-." >/dev/tty0 2>&1; 
+	chmod 1777 /var/volatile/lock || echo "Failed to set mode -1777- for -/var/volatile/lock-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/volatile/log"; 
+	chown root.root /var/volatile/log || echo "Failed to set owner -root- for -/var/volatile/log-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/volatile/log || echo "Failed to set mode -0755- for -/var/volatile/log-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/volatile/run"; 
+	chown root.root /var/volatile/run || echo "Failed to set owner -root- for -/var/volatile/run-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/volatile/run || echo "Failed to set mode -0755- for -/var/volatile/run-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/volatile/tmp"; 
+	chown root.root /var/volatile/tmp || echo "Failed to set owner -root- for -/var/volatile/tmp-." >/dev/tty0 2>&1; 
+	chmod 1777 /var/volatile/tmp || echo "Failed to set mode -1777- for -/var/volatile/tmp-." >/dev/tty0 2>&1 
+	test -e "/var/cache" -o -L /var/cache || ln -s "/var/volatile/cache" "/var/cache" >/dev/tty0 2>&1
+	test -e "/var/lock" -o -L /var/lock || ln -s "/var/volatile/lock" "/var/lock" >/dev/tty0 2>&1
+	test -e "/var/log" -o -L /var/log || ln -s "/var/volatile/log" "/var/log" >/dev/tty0 2>&1
+	test -e "/var/run" -o -L /var/run || ln -s "/var/volatile/run" "/var/run" >/dev/tty0 2>&1
+	test -e "/var/tmp" -o -L /var/tmp || ln -s "/var/volatile/tmp" "/var/tmp" >/dev/tty0 2>&1
+ 
+	mkdir -p "/var/lock/subsys"; 
+	chown root.root /var/lock/subsys || echo "Failed to set owner -root- for -/var/lock/subsys-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/lock/subsys || echo "Failed to set mode -0755- for -/var/lock/subsys-." >/dev/tty0 2>&1 
+ 
+	touch "/var/log/wtmp"; 
+	chown root.root /var/log/wtmp || echo "Failed to set owner -root- for -/var/log/wtmp-." >/dev/tty0 2>&1; 
+	chmod 0664 /var/log/wtmp || echo "Failed to set mode -0664- for -/var/log/wtmp-." >/dev/tty0 2>&1 
+ 
+	touch "/var/run/utmp"; 
+	chown root.root /var/run/utmp || echo "Failed to set owner -root- for -/var/run/utmp-." >/dev/tty0 2>&1; 
+	chmod 0664 /var/run/utmp || echo "Failed to set mode -0664- for -/var/run/utmp-." >/dev/tty0 2>&1 
+ 
+	touch "/var/run/resolv.conf"; 
+	chown root.root /var/run/resolv.conf || echo "Failed to set owner -root- for -/var/run/resolv.conf-." >/dev/tty0 2>&1; 
+	chmod 0644 /var/run/resolv.conf || echo "Failed to set mode -0644- for -/var/run/resolv.conf-." >/dev/tty0 2>&1 
+ 
+	touch "/var/run/resolv.conf"; 
+	chown root.root /var/run/resolv.conf || echo "Failed to set owner -root- for -/var/run/resolv.conf-." >/dev/tty0 2>&1; 
+	chmod 0644 /var/run/resolv.conf || echo "Failed to set mode -0644- for -/var/run/resolv.conf-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/cache/fontconfig"; 
+	chown root.root /var/cache/fontconfig || echo "Failed to set owner -root- for -/var/cache/fontconfig-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/cache/fontconfig || echo "Failed to set mode -0755- for -/var/cache/fontconfig-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/run/dbus"; 
+	chown messagebus.messagebus /var/run/dbus || echo "Failed to set owner -messagebus- for -/var/run/dbus-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/run/dbus || echo "Failed to set mode -0755- for -/var/run/dbus-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/run/sepermit"; 
+	chown root.root /var/run/sepermit || echo "Failed to set owner -root- for -/var/run/sepermit-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/run/sepermit || echo "Failed to set mode -0755- for -/var/run/sepermit-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/run/wpa_supplicant"; 
+	chown root.root /var/run/wpa_supplicant || echo "Failed to set owner -root- for -/var/run/wpa_supplicant-." >/dev/tty0 2>&1; 
+	chmod 0700 /var/run/wpa_supplicant || echo "Failed to set mode -0700- for -/var/run/wpa_supplicant-." >/dev/tty0 2>&1 
+ 
+	mkdir -p "/var/run/pulse"; 
+	chown pulse.pulse /var/run/pulse || echo "Failed to set owner -pulse- for -/var/run/pulse-." >/dev/tty0 2>&1; 
+	chmod 0755 /var/run/pulse || echo "Failed to set mode -0755- for -/var/run/pulse-." >/dev/tty0 2>&1 

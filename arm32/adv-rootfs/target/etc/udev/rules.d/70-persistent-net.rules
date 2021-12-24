@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", ACTION=="add", ATTR{type}=="1", KERNEL=="eth*", RUN+="/etc/udev/scripts/eth.sh  %k"
+SUBSYSTEM=="net", ACTION=="add", ATTR{type}=="1", KERNEL=="usb*", RUN+="/etc/udev/scripts/g_eth.sh %k"

@@ -1,0 +1,9 @@
+c3f0f74f18848867550d8ffb7d769570  usr/lib/arm-linux-gnueabihf/libcapnp-0.5.3.so
+3dc1a81841e002139d06520c002e8e8e  usr/lib/arm-linux-gnueabihf/libcapnp-rpc-0.5.3.so
+c68f679dc61888cdc30ace53cbb3b5bf  usr/lib/arm-linux-gnueabihf/libcapnpc-0.5.3.so
+425aa26e5c4be941bf38c4e5161ccaba  usr/lib/arm-linux-gnueabihf/libkj-0.5.3.so
+fd70b1eb1a3004cf9eb28124ac7b1fae  usr/lib/arm-linux-gnueabihf/libkj-async-0.5.3.so
+cac48e16d2fc03db6ee36451ec8250ad  usr/share/doc/libcapnp-0.5.3/README.txt
+2a5ebb7228b1b60b787e3b73da2603b6  usr/share/doc/libcapnp-0.5.3/changelog.Debian.gz
+c8b90626e1bce881c1e3a013b50cb0cc  usr/share/doc/libcapnp-0.5.3/copyright
+491be0e1e40824f6a139176bce54801f  usr/share/lintian/overrides/libcapnp-0.5.3

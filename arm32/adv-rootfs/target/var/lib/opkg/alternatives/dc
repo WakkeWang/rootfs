@@ -1,0 +1,3 @@
+/usr/bin/dc
+../../bin/busybox 50
+dc.bc 100

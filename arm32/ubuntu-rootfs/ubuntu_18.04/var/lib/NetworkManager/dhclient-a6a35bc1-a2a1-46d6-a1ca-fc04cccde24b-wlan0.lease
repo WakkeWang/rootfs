@@ -1,0 +1,18 @@
+lease {
+  interface "wlan0";
+  fixed-address 192.168.43.226;
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.43.1;
+  option dhcp-lease-time 3600;
+  option dhcp-message-type 5;
+  option domain-name-servers 192.168.43.1;
+  option dhcp-server-identifier 192.168.43.1;
+  option dhcp-renewal-time 1800;
+  option broadcast-address 192.168.43.255;
+  option dhcp-rebinding-time 3150;
+  option vendor-encapsulated-options "ANDROID_METERED";
+  option host-name "adam3600";
+  renew 5 2020/12/18 04:16:10;
+  rebind 5 2020/12/18 04:41:03;
+  expire 5 2020/12/18 04:48:33;
+}

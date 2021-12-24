@@ -1,0 +1,10 @@
+[Unit]
+Description=Just for RTC, hwclock.Service
+
+[Service]
+Type=forking
+ExecStart=/etc/init.d/hwclock.sh start
+ExecStop=/etc/init.d/hwclock.sh stop
+
+[Install]
+WantedBy=multi-user.target

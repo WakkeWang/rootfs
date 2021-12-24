@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$1" == "-f" ];then
+	interface=$2
+else
+	interface=$1
+fi
+
+process_num=`ps | grep "udhcpc.$interface.pid" | grep -v grep | wc -l`
+if [ "$process_num" != "" ];then
+	if [ ${process_num} -ge 1 ];then
+		m=0
+		while [ $m -lt ${process_num} ]
+		do
+			process=`ps | grep "udhcpc.$interface.pid" | grep -v grep | awk '{print $1}' | sed -n 1'p' `
+			if [ "$process" != "" ];then
+				kill -9 $process
+			fi		
+			m=`expr $m + 1`
+		done	
+	fi
+fi
+
+busybox ifdown $1 $2 $3 $4 $5

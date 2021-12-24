@@ -1,0 +1,23 @@
+logrotate state -- version 2
+"/var/log/dpkg.log" 2020-12-18-6:0:0
+"/var/log/unattended-upgrades/unattended-upgrades.log" 2020-12-18-6:0:0
+"/var/log/unattended-upgrades/unattended-upgrades-shutdown.log" 2020-12-18-6:0:0
+"/var/log/auth.log" 2020-12-18-6:0:0
+"/var/log/apt/term.log" 2020-12-18-6:0:0
+"/var/log/ppp-connect-errors" 2020-12-18-6:0:0
+"/var/log/apt/history.log" 2020-12-18-6:0:0
+"/var/log/alternatives.log" 2020-12-18-6:0:0
+"/var/log/debug" 2020-12-18-6:0:0
+"/var/log/mail.log" 2020-12-18-6:0:0
+"/var/log/kern.log" 2020-12-18-6:0:0
+"/var/log/daemon.log" 2020-12-18-6:0:0
+"/var/log/wtmp" 2020-12-18-6:0:0
+"/var/log/mail.warn" 2020-12-18-6:0:0
+"/var/log/btmp" 2020-12-18-6:0:0
+"/var/log/lpr.log" 2020-12-18-6:0:0
+"/var/log/mail.err" 2020-12-18-6:0:0
+"/var/log/unattended-upgrades/unattended-upgrades-dpkg.log" 2020-12-18-6:0:0
+"/var/log/user.log" 2020-12-18-6:0:0
+"/var/log/mail.info" 2020-12-18-6:0:0
+"/var/log/cron.log" 2020-12-18-6:0:0
+"/var/log/messages" 2020-12-18-6:0:0

@@ -1,0 +1,12 @@
+{
+  "registry-mirrors": [
+    "http://hub-mirror.c.163.com"
+  ],
+  "insecure-registries": [
+    "registry-1.docker.io"
+  ],
+
+  "data-root": "/opt/docker/data-root",
+  "exec-root": "/opt/docker/exec-root"
+}
+

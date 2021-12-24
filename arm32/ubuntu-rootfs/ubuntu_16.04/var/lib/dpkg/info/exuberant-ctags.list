@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/bin
+/usr/bin/ctags-exuberant
+/usr/share
+/usr/share/doc
+/usr/share/doc/exuberant-ctags
+/usr/share/doc/exuberant-ctags/changelog.Debian.gz
+/usr/share/doc/exuberant-ctags/FAQ.gz
+/usr/share/doc/exuberant-ctags/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/ctags-exuberant.1.gz

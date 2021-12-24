@@ -1,0 +1,3 @@
+auto wwan0
+iface wwan0 inet dhcp
+allow-hotplug wwan0

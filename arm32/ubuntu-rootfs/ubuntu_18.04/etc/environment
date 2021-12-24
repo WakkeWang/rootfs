@@ -1,0 +1,4 @@
+JAVA_HOME="/usr/lib/jdk1.8.0_271/jre"
+CLASSPATH=".:/usr/lib/jdk1.8.0_271/jre/lib:/usr/lib/jdk1.8.0_271/jre:/lib/ext/ojdbc6.jar"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jdk1.8.0_271/jre/bin:/root/adv_sdk/bin:/root/adv_sdk/util"
+LD_LIBRARY_PATH=".:/usr/local/net-snmp/lib:/home/sysuser/lib:/usr/lib/jdk1.8.0_271/jre/lib/arm:/usr/lib/jdk1.8.0_271/jre/lib/arm/client:/root/adv_sdk/lib"

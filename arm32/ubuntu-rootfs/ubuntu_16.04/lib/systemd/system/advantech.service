@@ -1,0 +1,10 @@
+[Unit]
+Description=Just for advantech's program running
+
+[Service]
+ExecStart=/etc/init.d/advantech.sh
+
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

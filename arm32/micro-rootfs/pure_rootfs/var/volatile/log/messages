@@ -1,0 +1,297 @@
+Jan 29 02:47:21 adam3600 syslog.info syslogd started: BusyBox v1.32.0
+Jan 29 02:47:21 adam3600 user.notice kernel: klogd started: BusyBox v1.32.0 (2020-10-21 16:49:49 CST)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Booting Linux on physical CPU 0x0
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000] Linux version 4.9.69-g9ce43c71ae (root@abjenkins-linux-x64) (gcc version 6.2.1 20161016 (Linaro GCC 6.2-2016.11) ) #1 PREEMPT Fri Sep 18 10:31:49 CST 2020
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c5387d
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] OF: fdt:Machine model: TI AM335x Advantech ADAM3600
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] efi: Getting EFI parameters from FDT:
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] efi: UEFI not found.
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] cma: Reserved 48 MiB at 0x8b800000
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Memory policy: Data cache writeback
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000] On node 0 totalpages: 65536
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000] free_area_init_node: node 0, pgdat c0c3bb4c, node_mem_map cfda1000
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000]   Normal zone: 576 pages used for memmap
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000]   Normal zone: 0 pages reserved
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000]   Normal zone: 65536 pages, LIFO batch:15
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] CPU: All CPU(s) started in SVC mode.
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] AM335X ES2.1 (neon)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.000000] pcpu-alloc: [0] 0 
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 64960
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000] Kernel command line: console=ttyO0,115200n8 coherent_pool=2M root=/dev/mmcblk0p2 ro rootfstype=ext3 rootwait ip=none
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Memory: 198388K/262144K available (7168K kernel code, 242K rwdata, 2080K rodata, 1024K init, 263K bss, 14604K reserved, 49152K cma-reserved, 0K highmem)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000] Virtual kernel memory layout:
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]     vmalloc : 0xd0800000 - 0xff800000   ( 752 MB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]     lowmem  : 0xc0000000 - 0xd0000000   ( 256 MB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]       .text : 0xc0008000 - 0xc0800000   (8160 kB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]       .init : 0xc0b00000 - 0xc0c00000   (1024 kB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]       .data : 0xc0c00000 - 0xc0c3c9a0   ( 243 kB)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    0.000000]        .bss : 0xc0c3c9a0 - 0xc0c7e864   ( 264 kB)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] Preemptible hierarchical RCU implementation.
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] 	RCU kthread priority: 1.
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] NR_IRQS:16 nr_irqs:16 16
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] IRQ: Found an INTC at 0xfa200000 (revision 5.0) with 128 interrupts
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000000] OMAP clockevent source: timer2 at 24000000 Hz
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000018] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000043] clocksource: timer1: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000057] OMAP clocksource: timer1 at 24000000 Hz
+Jan 29 02:47:21 adam3600 user.crit kernel: [    0.000264] clocksource_probe: no matching clocksources found
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000466] Console: colour dummy device 80x30
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.000500] Calibrating delay loop... 597.60 BogoMIPS (lpj=2988032)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.058840] pid_max: default: 32768 minimum: 301
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.059013] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.059030] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.060022] CPU: Testing write buffer coherency: ok
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.060442] Setting up static identity map for 0x80100000 - 0x80100060
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.061727] EFI services will not be available.
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.062228] devtmpfs: initialized
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.077407] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 3
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.077829] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.077863] futex hash table entries: 256 (order: -1, 3072 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.082221] pinctrl core: initialized pinctrl subsystem
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.083726] NET: Registered protocol family 16
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.089260] DMA: preallocated 2048 KiB pool for atomic coherent allocations
+Jan 29 02:47:21 adam3600 user.warn kernel: [    0.107725] omap_hwmod: debugss: _wait_target_disable failed
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.168367] gpio gpiochip0: (gpio): added GPIO chardev (254:0)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.168836] gpiochip_setup_dev: registered GPIOs 0 to 31 on device: gpiochip0 (gpio)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.170884] OMAP GPIO hardware version 0.1
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.171892] gpio gpiochip1: (gpio): added GPIO chardev (254:1)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.172301] gpiochip_setup_dev: registered GPIOs 32 to 63 on device: gpiochip1 (gpio)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.174984] gpio gpiochip2: (gpio): added GPIO chardev (254:2)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.175478] gpiochip_setup_dev: registered GPIOs 64 to 95 on device: gpiochip2 (gpio)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.178087] gpio gpiochip3: (gpio): added GPIO chardev (254:3)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.178471] gpiochip_setup_dev: registered GPIOs 96 to 127 on device: gpiochip3 (gpio)
+Jan 29 02:47:21 adam3600 user.info kernel: [    0.189346] omap-gpmc 50000000.gpmc: GPMC revision 6.0
+Jan 29 02:47:21 adam3600 user.warn kernel: [    0.189380] gpmc_mem_init: disabling cs 0 mapped at 0x0-0x1000000
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.189418] gpiochip_find_base: found new base at 510
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.189450] gpio gpiochip4: (omap-gpmc): added GPIO chardev (254:4)
+Jan 29 02:47:21 adam3600 user.debug kernel: [    0.189870] gpiochip_setup_dev: registered GPIOs 510 to 511 on device: gpiochip4 (omap-gpmc)
+Jan 29 02:47:21 adam3600 user.notice kernel: [    2.558871] random: fast init done
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.557182] +++HW Ver: ADAM-3600-C2GL1A1E
+Jan 29 02:47:21 adam3600 user.warn kernel: [   11.562385] +++ADAM3600 init.
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.562415] No ATAGs?
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.562430] hw-breakpoint: debug architecture 0x4 unsupported.
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.609964] edma 49000000.edma: TI EDMA DMA engine driver
+Jan 29 02:47:21 adam3600 user.debug kernel: [   11.610385] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/fixedregulator0[0]'
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613096] omap_i2c 44e0b000.i2c: could not find pctldev for node /ocp/l4_wkup@44c00000/scm@210000/pinmux@800/pinmux_i2c0_pins, deferring probe
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613277] media: Linux media interface: v0.10
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613354] Linux video capture interface: v2.00
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613412] pps_core: LinuxPPS API ver. 1 registered
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613424] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613456] PTP clock support registered
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.613509] EDAC MC: Ver: 3.0.0
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.614907] omap-mailbox 480c8000.mailbox: omap mailbox rev 0x400
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.616853] clocksource: Switched to clocksource timer1
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.630636] NET: Registered protocol family 2
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.631588] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.631634] TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.631671] TCP: Hash tables configured (established 2048 bind 2048)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.631754] UDP hash table entries: 256 (order: 0, 4096 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.631779] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.631957] NET: Registered protocol family 1
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.632475] RPC: Registered named UNIX socket transport module.
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.632492] RPC: Registered udp transport module.
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.632502] RPC: Registered tcp transport module.
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.632510] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.633619] hw perfevents: enabled with armv7_cortex_a8 PMU driver, 5 counters available
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.636677] workingset: timestamp_bits=14 max_order=16 bucket_order=2
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.647736] exFAT: file-system version 2.2.0-3arter97
+Jan 29 02:47:21 adam3600 user.notice kernel: [   11.648969] NFS: Registering the id_resolver key type
+Jan 29 02:47:21 adam3600 user.notice kernel: [   11.649020] Key type id_resolver registered
+Jan 29 02:47:21 adam3600 user.notice kernel: [   11.649031] Key type id_legacy registered
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.649090] ntfs: driver 2.1.32 [Flags: R/O].
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.651489] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.651514] io scheduler noop registered
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.651525] io scheduler deadline registered
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.651728] io scheduler cfq registered (default)
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.653633] pinctrl-single 44e10800.pinmux: 142 pins at pa f9e10800 size 568
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.737473] Serial: 8250/16550 driver, 10 ports, IRQ sharing disabled
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.741137] serial8250.0: ttyS0 at MMIO 0x1000000 (irq = 44, base_baud = 921600) is a XR16850
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.742045] serial8250.0: ttyS1 at MMIO 0x1000801 (irq = 43, base_baud = 921600) is a XR16850
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.742881] serial8250.0: ttyS2 at MMIO 0x1001201 (irq = 136, base_baud = 921600) is a XR16850
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.743743] omap_uart 44e09000.serial: no wakeirq for uart0
+Jan 29 02:47:21 adam3600 user.debug kernel: [   11.743769] of_get_named_gpiod_flags: can't parse 'rts-gpio' property of node '/ocp/serial@44e09000[0]'
+Jan 29 02:47:21 adam3600 user.info kernel: [   11.743807] 44e09000.serial: ttyO0 at MMIO 0x44e09000 (irq = 158, base_baud = 3000000) is a OMAP UART0
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.374885] console [ttyO0] enabled
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.379179] omap_uart 48022000.serial: no wakeirq for uart1
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.385041] of_get_named_gpiod_flags: can't parse 'rts-gpio' property of node '/ocp/serial@48022000[0]'
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.385162] 48022000.serial: ttyO1 at MMIO 0x48022000 (irq = 159, base_baud = 3000000) is a OMAP UART1
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.395520] omap_uart 481a6000.serial: no wakeirq for uart3
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.401419] of_get_named_gpiod_flags: can't parse 'rts-gpio' property of node '/ocp/serial@481a6000[0]'
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.401507] 481a6000.serial: ttyO3 at MMIO 0x481a6000 (irq = 160, base_baud = 3000000) is a OMAP UART3
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.412608] omap_rng 48310000.rng: OMAP Random Number Generator ver. 20
+Jan 29 02:47:21 adam3600 user.warn kernel: [   12.420087] SRAM driver installed, with major 245
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.425103] [drm] Initialized
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.428728] panel panel: GPIO lookup for consumer enable
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.428737] panel panel: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.428751] of_get_named_gpiod_flags: can't parse 'enable-gpios' property of node '/panel[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.428761] of_get_named_gpiod_flags: can't parse 'enable-gpio' property of node '/panel[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.428769] panel panel: using lookup tables for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.428779] panel panel: lookup for GPIO enable failed
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.430219] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.437255] [drm] No driver support for vblank timestamp query.
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.474791] Console: switching to colour frame buffer device 80x30
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.487035] tilcdc 4830e000.lcdc: fb0:  frame buffer device
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.534228] brd: module loaded
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.545923] loop: module loaded
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.556190] libphy: Fixed MDIO Bus: probed
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.636888] davinci_mdio 4a101000.mdio: davinci mdio revision 1.6
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.643307] davinci_mdio 4a101000.mdio: detected phy mask fffffff5
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.651536] libphy: 4a101000.mdio: probed
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.655796] davinci_mdio 4a101000.mdio: phy[1]: device 4a101000.mdio:01, driver TI TLK10X 10/100 Mbps PHY
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.665992] davinci_mdio 4a101000.mdio: phy[3]: device 4a101000.mdio:03, driver TI TLK10X 10/100 Mbps PHY
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.677126] cpsw 4a100000.ethernet: Detected MACID = b0:d5:cc:a2:02:cc
+Jan 29 02:47:21 adam3600 user.err kernel: [   12.684115] cpsw 4a100000.ethernet: device node lookup for pps timer failed
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.691573] cpsw 4a100000.ethernet: cpts: overflow check period 500 (jiffies)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.700548] cpsw 4a100000.ethernet: cpsw: Detected MACID = b0:d5:cc:a2:02:ce
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.709501] PPP generic driver version 2.4.2
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.714757] mousedev: PS/2 mouse device common for all mice
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.721918] omap_rtc 44e3e000.rtc: already running
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.727474] rtc rtc0: 44e3e000.rtc: dev (253:0)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.727504] omap_rtc 44e3e000.rtc: rtc core: registered 44e3e000.rtc as rtc0
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.736731] ht1382-rtc rtc1: ht1382_read_time: tm is secs=7, mins=47, hours=2, mday=29, mon=1, year=120, wday=3
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.737185] rtc rtc1: ht1382-rtc: dev (253:1)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.737199] ht1382-rtc rtc1: rtc core: registered ht1382-rtc as rtc1
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.743943] i2c /dev entries driver
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.749636] omap_hsmmc 48060000.mmc: GPIO lookup for consumer cd
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.749647] omap_hsmmc 48060000.mmc: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.749682] of_get_named_gpiod_flags: parsed 'cd-gpios' property of node '/ocp/mmc@48060000[0]' - status (0)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.749700] omap_hsmmc 48060000.mmc: Got CD GPIO
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.754588] omap_hsmmc 48060000.mmc: GPIO lookup for consumer wp
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.754595] omap_hsmmc 48060000.mmc: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.754605] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/ocp/mmc@48060000[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.754614] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/ocp/mmc@48060000[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.754623] omap_hsmmc 48060000.mmc: using lookup tables for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.754633] omap_hsmmc 48060000.mmc: lookup for GPIO wp failed
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.807698] omap_hsmmc 47810000.mmc: GPIO lookup for consumer cd
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.807712] omap_hsmmc 47810000.mmc: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.807747] of_get_named_gpiod_flags: parsed 'cd-gpios' property of node '/ocp/mmc@47810000[0]' - status (0)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.807765] omap_hsmmc 47810000.mmc: Got CD GPIO
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.813702] omap_hsmmc 47810000.mmc: GPIO lookup for consumer wp
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.813710] omap_hsmmc 47810000.mmc: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.813737] of_get_named_gpiod_flags: parsed 'wp-gpios' property of node '/ocp/mmc@47810000[0]' - status (0)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.813750] omap_hsmmc 47810000.mmc: Got WP GPIO
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.877744] of_get_named_gpiod_flags: parsed 'gpios' property of node '/leds/led1[0]' - status (0)
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.877983] of_get_named_gpiod_flags: parsed 'gpios' property of node '/leds/led2[0]' - status (0)
+Jan 29 02:47:21 adam3600 user.debug kernel: [   12.878206] of_get_named_gpiod_flags: parsed 'gpios' property of node '/leds/led3[0]' - status (0)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.879999] NET: Registered protocol family 10
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.890038] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.897473] NET: Registered protocol family 17
+Jan 29 02:47:21 adam3600 user.notice kernel: [   12.902600] Key type dns_resolver registered
+Jan 29 02:47:21 adam3600 user.err kernel: [   12.907560] omap_voltage_late_init: Voltage driver support not added
+Jan 29 02:47:21 adam3600 user.warn kernel: [   12.926498] mmc0: host does not support reading read-only switch, assuming write-enable
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.938433] mmc0: new high speed SDHC card at address aaaa
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.945069] mmcblk0: mmc0:aaaa SU04G 3.69 GiB 
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.950557] at24 0-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.958661] omap_i2c 44e0b000.i2c: bus 0 rev0.11 at 100 kHz
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.964710]  mmcblk0: p1 p2 p3 p4
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.970798] omap_rtc 44e3e000.rtc: setting system clock to 2000-01-01 00:15:54 UTC (946685754)
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.982716] EXT4-fs (mmcblk0p2): mounting ext3 file system using the ext4 subsystem
+Jan 29 02:47:21 adam3600 user.info kernel: [   12.996843] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.005629] VFS: Mounted root (ext3 filesystem) readonly on device 179:2.
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.015948] devtmpfs: mounted
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.021886] Freeing unused kernel memory: 1024K
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.037146] mmc1: new high speed SDHC card at address e624
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.044695] mmcblk1: mmc1:e624 SC32G 29.7 GiB 
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.054759]  mmcblk1: p1
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.503153] EXT4-fs (mmcblk0p2): re-mounted. Opts: data=ordered
+Jan 29 02:47:21 adam3600 user.info kernel: [   13.527443] EXT4-fs (mmcblk0p2): re-mounted. Opts: data=ordered
+Jan 29 02:47:21 adam3600 user.info kernel: [   16.704920] EXT4-fs (mmcblk0p2): re-mounted. Opts: data=ordered
+Jan 29 02:47:21 adam3600 user.info kernel: [   16.753328] EXT4-fs (mmcblk0p4): mounting ext3 file system using the ext4 subsystem
+Jan 29 02:47:21 adam3600 user.info kernel: [   16.774263] EXT4-fs (mmcblk0p4): mounted filesystem with ordered data mode. Opts: (null)
+Jan 29 02:47:21 adam3600 user.info kernel: [   16.931839] udev[125]: starting version 164
+Jan 29 02:47:21 adam3600 user.info kernel: [   19.600881] omap_wdt: OMAP Watchdog Timer Rev 0x01: initial timeout 60 sec
+Jan 29 02:47:21 adam3600 user.info kernel: [   19.818310] omap-sham 53100000.sham: hw accel on OMAP rev 4.3
+Jan 29 02:47:21 adam3600 user.info kernel: [   20.024865] omap-aes 53500000.aes: OMAP AES hw accel rev: 3.2
+Jan 29 02:47:21 adam3600 user.info kernel: [   20.198970] omap-aes 53500000.aes: will run requests pump with realtime priority
+Jan 29 02:47:21 adam3600 user.info kernel: [   21.085902] remoteproc remoteproc0: wkup_m3 is available
+Jan 29 02:47:21 adam3600 user.info kernel: [   21.531057] remoteproc remoteproc0: powering up wkup_m3
+Jan 29 02:47:21 adam3600 user.warn kernel: [   21.579074] remoteproc remoteproc0: Direct firmware load for am335x-pm-firmware.elf failed with error -2
+Jan 29 02:47:21 adam3600 user.err kernel: [   21.681822] remoteproc remoteproc0: request_firmware failed: -2
+Jan 29 02:47:21 adam3600 user.err kernel: [   21.757210] wkup_m3_ipc 44e11324.wkup_m3_ipc: rproc_boot failed
+Jan 29 02:47:21 adam3600 user.info kernel: [   21.942577] exFAT-fs (mmcblk1[179:16]): trying to mount...
+Jan 29 02:47:21 adam3600 user.err kernel: [   22.011966] exFAT-fs (mmcblk1[179:16]): bogus logical sector size 1
+Jan 29 02:47:21 adam3600 user.err kernel: [   22.157210] exFAT-fs (mmcblk1[179:16]): failed to recognize fat type
+Jan 29 02:47:21 adam3600 user.info kernel: [   22.235711] exFAT-fs (mmcblk1[179:16]): failed to mount! (-5)
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562333] am335x-phy-driver 47401300.usb-phy: GPIO lookup for consumer reset
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562352] am335x-phy-driver 47401300.usb-phy: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562369] of_get_named_gpiod_flags: can't parse 'reset-gpios' property of node '/ocp/usb@47400000/usb-phy@47401300[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562379] of_get_named_gpiod_flags: can't parse 'reset-gpio' property of node '/ocp/usb@47400000/usb-phy@47401300[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562388] am335x-phy-driver 47401300.usb-phy: using lookup tables for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562398] am335x-phy-driver 47401300.usb-phy: lookup for GPIO reset failed
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562409] am335x-phy-driver 47401300.usb-phy: GPIO lookup for consumer vbus-detect
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562415] am335x-phy-driver 47401300.usb-phy: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562426] of_get_named_gpiod_flags: can't parse 'vbus-detect-gpios' property of node '/ocp/usb@47400000/usb-phy@47401300[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562434] of_get_named_gpiod_flags: can't parse 'vbus-detect-gpio' property of node '/ocp/usb@47400000/usb-phy@47401300[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562441] am335x-phy-driver 47401300.usb-phy: using lookup tables for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   22.562449] am335x-phy-driver 47401300.usb-phy: lookup for GPIO vbus-detect failed
+Jan 29 02:47:21 adam3600 user.warn kernel: [   22.562530] 47401300.usb-phy supply vcc not found, using dummy regulator
+Jan 29 02:47:21 adam3600 user.info kernel: [   22.698451] usbcore: registered new interface driver usbfs
+Jan 29 02:47:21 adam3600 user.info kernel: [   22.698554] usbcore: registered new interface driver hub
+Jan 29 02:47:21 adam3600 user.info kernel: [   22.704769] usbcore: registered new device driver usb
+Jan 29 02:47:21 adam3600 user.info kernel: [   22.882938] musb-hdrc musb-hdrc.0: MUSB HDRC host driver
+Jan 29 02:47:21 adam3600 user.info kernel: [   22.967131] musb-hdrc musb-hdrc.0: new USB bus registered, assigned bus number 1
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.047276] hub 1-0:1.0: USB hub found
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.087064] hub 1-0:1.0: 1 port detected
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130564] am335x-phy-driver 47401b00.usb-phy: GPIO lookup for consumer reset
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130583] am335x-phy-driver 47401b00.usb-phy: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130600] of_get_named_gpiod_flags: can't parse 'reset-gpios' property of node '/ocp/usb@47400000/usb-phy@47401b00[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130611] of_get_named_gpiod_flags: can't parse 'reset-gpio' property of node '/ocp/usb@47400000/usb-phy@47401b00[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130620] am335x-phy-driver 47401b00.usb-phy: using lookup tables for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130630] am335x-phy-driver 47401b00.usb-phy: lookup for GPIO reset failed
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130641] am335x-phy-driver 47401b00.usb-phy: GPIO lookup for consumer vbus-detect
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130648] am335x-phy-driver 47401b00.usb-phy: using device tree for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130657] of_get_named_gpiod_flags: can't parse 'vbus-detect-gpios' property of node '/ocp/usb@47400000/usb-phy@47401b00[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130665] of_get_named_gpiod_flags: can't parse 'vbus-detect-gpio' property of node '/ocp/usb@47400000/usb-phy@47401b00[0]'
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130672] am335x-phy-driver 47401b00.usb-phy: using lookup tables for GPIO lookup
+Jan 29 02:47:21 adam3600 user.debug kernel: [   23.130680] am335x-phy-driver 47401b00.usb-phy: lookup for GPIO vbus-detect failed
+Jan 29 02:47:21 adam3600 user.warn kernel: [   23.130763] 47401b00.usb-phy supply vcc not found, using dummy regulator
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.156485] EXT4-fs (mmcblk0p3): mounting ext3 file system using the ext4 subsystem
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.199692] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.294703] musb-hdrc musb-hdrc.1: MUSB HDRC host driver
+Jan 29 02:47:21 adam3600 user.warn kernel: [   23.320907] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.389484] musb-hdrc musb-hdrc.1: new USB bus registered, assigned bus number 2
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.399558] hub 2-0:1.0: USB hub found
+Jan 29 02:47:21 adam3600 user.info kernel: [   23.403568] hub 2-0:1.0: 1 port detected
+Jan 29 02:47:21 adam3600 user.err kernel: [   23.478152] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   23.482456] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   23.838150] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   23.842467] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   24.278105] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   24.282424] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   24.718106] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   24.722399] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   25.158152] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   25.162438] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   25.537174] usb usb1-port1: Cannot enable. Maybe the USB cable is bad?
+Jan 29 02:47:21 adam3600 user.err kernel: [   25.618218] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   25.622523] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.info kernel: [   26.206964] usb 1-1: new full-speed USB device number 3 using musb-hdrc
+Jan 29 02:47:21 adam3600 user.err kernel: [   26.268072] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   26.272370] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.debug kernel: [   26.404482] ht1382-rtc rtc1: ht1382_read_time: tm is secs=21, mins=47, hours=2, mday=29, mon=1, year=120, wday=3
+Jan 29 02:47:21 adam3600 user.err kernel: [   26.696982] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.err kernel: [   26.701287] musb-hdrc musb-hdrc.0: Babble
+Jan 29 02:47:21 adam3600 user.info kernel: [   27.327442] usb 1-1: not running at top speed; connect to a high speed hub
+Jan 29 02:47:21 adam3600 user.info kernel: [   27.357327] hub 1-1:1.0: USB hub found
+Jan 29 02:47:21 adam3600 user.info kernel: [   27.362249] hub 1-1:1.0: 2 ports detected
+Jan 29 02:47:25 adam3600 user.debug kernel: [   30.346015] ht1382-rtc rtc1: ht1382_read_time: tm is secs=25, mins=47, hours=2, mday=29, mon=1, year=120, wday=3
+Jan 29 02:47:40 adam3600 user.notice kernel: [   45.936914] random: crng init done
+Jan 29 02:47:59 adam3600 auth.info login[1395]: root login on 'ttyO0'
+Jan 29 02:48:47 adam3600 user.info kernel: [  112.945551] net eth0: initializing cpsw version 1.12 (0)
+Jan 29 02:48:47 adam3600 user.info kernel: [  112.951319] cpsw 4a100000.ethernet: initialized cpsw ale version 1.4
+Jan 29 02:48:47 adam3600 user.info kernel: [  112.958923] cpsw 4a100000.ethernet: ALE Table size 1024
+Jan 29 02:48:47 adam3600 user.info kernel: [  113.067270] TI TLK10X 10/100 Mbps PHY 4a101000.mdio:01: attached PHY driver [TI TLK10X 10/100 Mbps PHY] (mii_bus:phy_addr=4a101000.mdio:01, irq=-1)
+Jan 29 02:48:47 adam3600 user.info kernel: [  113.085805] cpts ptp bc clkid 0
+Jan 29 02:48:47 adam3600 user.info kernel: [  113.094450] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Jan 29 02:48:50 adam3600 user.info kernel: [  116.167631] cpsw 4a100000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+Jan 29 02:48:50 adam3600 user.info kernel: [  116.176165] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready

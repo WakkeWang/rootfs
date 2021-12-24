@@ -1,0 +1,8 @@
+TARGETS = rsyslog killprocs single dropbear cron dbus rc.local ondemand
+INTERACTIVE =
+single: killprocs
+dropbear: rsyslog
+cron: rsyslog
+dbus: rsyslog
+rc.local: rsyslog dropbear cron dbus
+ondemand: rsyslog dropbear cron dbus

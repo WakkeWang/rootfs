@@ -1,0 +1,18 @@
+lease {
+  interface "eth1";
+  fixed-address 192.168.172.223;
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.172.1;
+  option dhcp-lease-time 86400;
+  option dhcp-message-type 5;
+  option domain-name-servers 192.168.172.1,8.8.8.8;
+  option dhcp-server-identifier 192.168.172.1;
+  option dhcp-renewal-time 43200;
+  option broadcast-address 192.168.172.255;
+  option dhcp-rebinding-time 75600;
+  option host-name "adam3600";
+  option domain-name "lan";
+  renew 3 2020/12/16 18:37:35;
+  rebind 4 2020/12/17 05:34:05;
+  expire 4 2020/12/17 08:34:05;
+}

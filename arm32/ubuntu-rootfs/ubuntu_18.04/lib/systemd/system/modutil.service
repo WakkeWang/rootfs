@@ -1,0 +1,10 @@
+[Unit]
+Description=depmod.service
+#Before=systemd-modules-load.service kmod.service systemd-udevd-kernel.socket
+
+[Service]
+ExecStart=/etc/init.d/modutil.sh
+Type=oneshot
+
+[Install]
+WantedBy=sysinit.target

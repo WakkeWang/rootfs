@@ -1,0 +1,3 @@
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+rootfs               /       auto       defaults             1  1
+/dev/mmcblk0p4      /home    auto       defaults             0  2

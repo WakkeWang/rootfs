@@ -1,0 +1,348 @@
+#!/bin/sh
+
+rootfsdev="rootfs"
+recoverydev="recovery"
+datadev="data"
+fsfile="rootfs.tar.gz"
+appsfile="apps.tar.gz"
+customfile="custom.tar.gz"
+
+CHECKSUM_FILE="checksum.md5"
+TAGLINK_DIR="/home/sysuser"
+USER_NAME=`echo $TAGLINK_DIR | awk -F / '{print $3}'`
+HOMEDIR=/media/${datadev}
+TARGET_DIR=${HOMEDIR}/${USER_NAME}
+
+MTDRFSNUM=9
+MTDRECOVERYNUM=10
+MTDDATANUM=11
+
+HN=`cat /proc/board | tr A-Z a-z`
+PWD=`pwd`
+
+echo_msg()
+{
+    NOW=$(date +'%Y-%m-%d %H:%M:%S')
+    echo "[$NOW] $1" 2>&1 | tee -a $PWD/update.log
+    sync
+}
+
+show_usage()
+{
+    echo "  usage: $0 <target-file> <sector name or number>"
+    echo "  You can use either the sector name or number.  They are as follows:"
+    echo "  0 - MLO"
+    echo "  1 - MLO1"
+    echo "  2 - MLO2"
+    echo "  3 - MLO3"
+    echo "  4 - dtb"
+    echo "  5 - uboot"
+    echo "  6 - uEnv"
+    echo "  7 - uEnv1"
+    echo "  8 - uImage"
+    echo "  9 - root file system"
+}
+
+mtd_name_to_num()
+{
+    case "$1" in
+        MLO)    MTDNUM=0 ;;
+        MLO1)   MTDNUM=1 ;;
+        MLO2)   MTDNUM=2 ;;
+        MLO3)   MTDNUM=3 ;;
+        dtb)    MTDNUM=4 ;;
+        uboot)  MTDNUM=5 ;;
+        uEnv)   MTDNUM=6 ;;
+        uEnv1)  MTDNUM=7 ;;
+        uImage) MTDNUM=8 ;;
+        rfs)    MTDNUM=9 ;;
+        *)      show_usage
+                exit 3 ;;
+    esac
+}
+
+get_mtd_size()
+{
+    case "$1" in
+        4)  MTDSIZE=0x80000 ;;
+        5)  MTDSIZE=0x100000 ;;
+        8)  MTDSIZE=0x700000 ;;
+        9)  MTDSIZE=0xF600000 ;;
+        *)  MTDSIZE=0x40000  ;;
+    esac
+}
+
+mtd_update()
+{
+    flash_erase $1 0 0
+    nandwrite -p $1 $2
+}
+
+nand_burn()
+{
+    # check if we need to map from name to number:
+    MTDNUM=$2
+    MTDSIZE=0
+
+    if [ "$MTDNUM" -eq "$MTDNUM" ] 2>/dev/null; then
+        echo "MTD sector number is $MTDNUM"
+    else
+        echo "MTD sector name is $MTDNUM"
+        mtd_name_to_num "$MTDNUM"
+    fi
+
+    MTDDEV=/dev/mtd$MTDNUM
+    if [[ ! -c $MTDDEV ]]; then
+        echo_msg "$MTDDEV doesn't exist or can't be opened as character device.  Exiting."
+        exit 4;
+    fi;
+
+    get_mtd_size $MTDNUM
+    echo "Using $MTDDEV, size $MTDSIZE"
+    if [ "$MTDNUM" -eq "$MTDRFSNUM" ] 2>/dev/null; then
+        echo "MTD root file system partition."
+        umount -l /media/${rootfsdev}
+        ubidetach -m $MTDRFSNUM
+        ubiformat $MTDDEV -f "$1" -O 1024
+        ubiattach -m $MTDRFSNUM -O 1024
+        mount -t ubifs ubi0_0 /media/${rootfsdev}
+        chown -R root:root /media/${rootfsdev}
+        chown -R 1000:1001 /media/${rootfsdev}/home/sysuser
+        sync
+        umount -l /media/${rootfsdev}
+        ubidetach -m $MTDRFSNUM > /dev/null
+    else
+        mtd_update $MTDDEV "$1"
+    fi
+}
+
+#-------------------------------------------------------------------------------
+file_checksum()
+{
+    if [ -f "${PWD}/$CHECKSUM_FILE" ]; then
+        echo_msg "MD5 check ${PWD}/$CHECKSUM_FILE..."
+        #md5sum -c -s ${PWD}/$CHECKSUM_FILE                      
+        encdec -d ${PWD}/$CHECKSUM_FILE /tmp/$CHECKSUM_FILE                    
+        md5sum -c -s /tmp/$CHECKSUM_FILE                      
+        if [ $? -eq 0 ]; then
+            advchecksum=y
+            echo_msg "MD5 check OK!"
+        else                                                           
+            advchecksum=n       
+            echo_msg "MD5 checksum error, please check file!"
+        fi              
+    else
+        advchecksum=y
+        #advchecksum=n
+        #echo_msg "Not checksum file, please check file!"
+    fi
+}
+
+part_mount()
+{
+    # umount
+    umount -l /media/${rootfsdev}
+    umount -l /media/${recoverydev}
+    umount -l /media/${datadev}
+    # detach
+    ubidetach -m $MTDRFSNUM > /dev/null
+    ubidetach -m $MTDRECOVERYNUM > /dev/null
+    ubidetach -m $MTDDATANUM > /dev/null
+
+    # format
+    ubiformat /dev/mtd$MTDRFSNUM -y -O 1024
+    ubiformat /dev/mtd$MTDRECOVERYNUM -y -O 1024
+    ubiformat /dev/mtd$MTDDATANUM -y -O 1024
+
+    # attach
+    ubiattach -m $MTDRFSNUM -O 1024
+    ubiattach -m $MTDRECOVERYNUM -O 1024
+    ubiattach -m $MTDDATANUM -O 1024
+
+    # mkvol
+    ubimkvol /dev/ubi0 -N rootfs -m
+    ubimkvol /dev/ubi1 -N recovery -m
+    ubimkvol /dev/ubi2 -N data -m
+
+    # mount
+    mount -t ubifs ubi0_0 /media/${rootfsdev}
+    mount -t ubifs ubi1_0 /media/${recoverydev}
+    mount -t ubifs ubi2_0 /media/${datadev}
+}
+
+image_update()
+{
+    nand_burn MLO MLO
+    nand_burn MLO MLO1
+    nand_burn MLO MLO2
+    nand_burn MLO MLO3
+    nand_burn u-boot.img uboot
+    nand_burn am335x-adam5630.dtb dtb
+    nand_burn uImage uImage
+}
+
+rfs_update()
+{
+    PREVDIR="${PWD}"
+    cd /media/${rootfsdev}
+    tar -xzpf ${PREVDIR}/${fsfile}
+    cd ${PREVDIR}
+    sync;sync
+
+    # get new image TAGLINK path
+    TAGLINK_DIR=`cat /media/${rootfsdev}/etc/profile | grep TAGLINK_PATH | head -1 | awk -F = '{print $2}'`
+    if [ "${TAGLINK_DIR}" == "" ]; then
+        TAGLINK_DIR=/home/sysuser
+    fi
+    echo_msg "New TagLink path is $TAGLINK_DIR"
+
+    USER_NAME=`echo $TAGLINK_DIR | awk -F / '{print $3}'`
+    echo_msg "New user name is $USER_NAME"
+
+    TARGET_DIR=${HOMEDIR}/${USER_NAME}
+    echo_msg "New Target path is $TARGET_DIR"
+
+    # init env
+    [ ! -d ${HOMEDIR}/ftp ] && mkdir -p ${HOMEDIR}/ftp
+    [ ! -d ${HOMEDIR}/sysuser ] && mkdir -p ${HOMEDIR}/sysuser
+    [ ! -d ${HOMEDIR}/root ] && mkdir -p ${HOMEDIR}/root
+    cp -f /media/${rootfsdev}/etc/skel/.bashrc $HOMEDIR/root
+    cp -f /media/${rootfsdev}/etc/skel/.profile $HOMEDIR/root
+    cp -f /media/${rootfsdev}/etc/skel/.bash_history $HOMEDIR/root
+    cp -f /media/${rootfsdev}/etc/skel/.bashrc $HOMEDIR/sysuser
+    cp -f /media/${rootfsdev}/etc/skel/.profile $HOMEDIR/sysuser
+    cp -f /media/${rootfsdev}/etc/skel/.bash_history $HOMEDIR/sysuser
+
+    cp -f /media/${rootfsdev}/etc/version $TARGET_DIR/.version
+    ln -sf $TARGET_DIR/.version /media/${rootfsdev}/etc/issue
+}
+
+recovery_update()
+{
+    [ -f MLO ] && cp -p MLO /media/${recoverydev}/                   
+    [ -f u-boot.img ] && cp -p u-boot.img /media/${recoverydev}/            
+    [ -f am335x-*.dtb ] && cp -p am335x-*.dtb /media/${recoverydev}/          
+    [ -f uImage ] && cp -p uImage /media/${recoverydev}/    
+    [ -f ramdisk.gz ] && cp -p ramdisk.gz /media/${recoverydev}/                     
+    [ -f rootfs.tar.gz ] && cp -p rootfs.tar.gz /media/${recoverydev}/
+    sync;sync
+}
+
+data_update()
+{
+    sync;sync
+}
+
+apps_update()
+{
+    if [ -f "$appsfile" ]; then
+        echo_msg "update applications package"
+        if [ -d "${TARGET_DIR}" ]; then
+            echo_msg "${TARGET_DIR} exists" 
+        else
+            echo_msg "create directory ${TARGET_DIR}" 
+            mkdir -p ${TARGET_DIR}
+        fi
+        [ -d $TARGET_DIR/bin ] && rm -rf $TARGET_DIR/bin
+        [ -d $TARGET_DIR/driver ] && rm -rf $TARGET_DIR/driver
+        [ -d $TARGET_DIR/lib ] && rm -rf $TARGET_DIR/lib
+        [ -d $TARGET_DIR/project ] && rm -rf $TARGET_DIR/project
+        [ -d $TARGET_DIR/update ] && rm -rf $TARGET_DIR/update
+        [ -d $TARGET_DIR/user ] && rm -rf $TARGET_DIR/user
+        [ -d $TARGET_DIR/util ] && rm -rf $TARGET_DIR/util
+        [ -d $TARGET_DIR/www ] && rm -rf $TARGET_DIR/www
+        [ -d $TARGET_DIR/doc ] && rm -rf $TARGET_DIR/doc
+        [ -d $TARGET_DIR/inc ] && rm -rf $TARGET_DIR/inc
+        tar -xzpf $appsfile -C $TARGET_DIR
+        sync;sync
+    else
+        echo_msg "Not applications package"
+    fi
+}
+
+custom_update()
+{
+    if [ -f "$customfile" ]; then
+        echo_msg "update custom package"
+        ln -s ${HOMEDIR}/root /media/${rootfsdev}/home/root
+        ln -s ${HOMEDIR}/sysuser /media/${rootfsdev}/home/sysuser
+        ln -s ${HOMEDIR}/ftp /media/${rootfsdev}/home/ftp
+        tar -xzpf $customfile -C /media/${rootfsdev}
+        sync;sync
+        rm /media/${rootfsdev}/home/root
+        rm /media/${rootfsdev}/home/sysuser
+        rm /media/${rootfsdev}/home/ftp
+        sync;sync
+    else
+        echo_msg "Not custom package"
+    fi
+}
+
+post_update()
+{
+    echo_msg "change the owner and group of $TARGET_DIR"
+    if [ "$USER_NAME" == "root" ]; then
+        echo_msg "user is root"
+        chown -R root:root $TARGET_DIR
+        chown -R 1000:1001 $HOMEDIR/sysuser
+    else    
+        echo_msg "user is $USER_NAME"
+        chown -R $USER_NAME:$USER_NAME $TARGET_DIR
+        chown -R root:root $HOMEDIR/root
+    fi
+    sync;sync
+    cd /
+    echo_msg "umount the partition"
+    # umount
+    umount -l /media/${rootfsdev}
+    umount -l /media/${recoverydev}
+    umount -l /media/${datadev}
+    # detach
+    ubidetach -m $MTDRFSNUM > /dev/null
+    ubidetach -m $MTDRECOVERYNUM > /dev/null
+    ubidetach -m $MTDDATANUM > /dev/null
+    sync;sync
+}
+
+################################################################################
+if [[ "$1" = "all" ]]; then
+    echo_msg "update image file"
+    image_update
+
+    part_mount
+
+    echo_msg "update recovery file"
+    recovery_update
+
+    echo_msg "update rootfs file"
+    rfs_update
+
+    echo_msg "update data file"
+    data_update
+
+    echo_msg "update applications file"
+    apps_update
+
+    echo_msg "update custom file"
+    custom_update
+
+    post_update
+
+    sync;sync
+    echo_msg "NAND update finish!"
+    exit 0
+fi
+
+if [[ -z "$1"  ||  -z "$2" ]]; then
+    show_usage
+    exit 1;
+fi
+
+if [[ ! -f "$1" ]]; then
+    echo "$1 does not exist. Exiting."
+    exit 2;
+fi
+
+nand_burn $1 $2
+
+exit 0

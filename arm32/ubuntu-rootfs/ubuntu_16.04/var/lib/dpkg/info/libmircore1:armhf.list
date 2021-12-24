@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmircore1
+/usr/share/doc/libmircore1/changelog.Debian.gz
+/usr/share/doc/libmircore1/copyright
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libmircore.so.1

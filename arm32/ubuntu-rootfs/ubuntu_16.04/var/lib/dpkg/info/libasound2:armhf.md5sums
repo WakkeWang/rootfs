@@ -1,0 +1,8 @@
+e5bef11c89b0ef38905b3b1ec26b1c03  usr/lib/arm-linux-gnueabihf/alsa-lib/smixer/smixer-ac97.so
+3f78770407242a8a6059de6c535d2c27  usr/lib/arm-linux-gnueabihf/alsa-lib/smixer/smixer-hda.so
+d6048f5fc3ff11a2427d6840b5058a81  usr/lib/arm-linux-gnueabihf/alsa-lib/smixer/smixer-sbase.so
+8ff71e1bb772a5e35ac4ef11c676e78d  usr/lib/arm-linux-gnueabihf/libasound.so.2.0.0
+e4a904cb9280a41da02bc54b475a3f7c  usr/share/doc/libasound2/NEWS.Debian.gz
+de4b143fb1af85c83b419d5043aa204e  usr/share/doc/libasound2/changelog.Debian.gz
+2c0a07f354a690f72462dfa9631227d8  usr/share/doc/libasound2/copyright
+452e21ca23de6b02cc7f581e4a40ce42  usr/share/doc/libasound2/examples/asoundrc.txt.gz

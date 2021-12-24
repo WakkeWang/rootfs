@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libqmi-glib5
+/usr/share/doc
+/usr/share/doc/libqmi-glib5
+/usr/share/doc/libqmi-glib5/copyright
+/usr/share/doc/libqmi-glib5/AUTHORS
+/usr/share/doc/libqmi-glib5/changelog.Debian.gz
+/usr/share/doc/libqmi-glib5/README
+/usr/share/doc/libqmi-glib5/NEWS.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libqmi-glib.so.5.1.0
+/usr/lib/arm-linux-gnueabihf/libqmi-glib.so.5

@@ -1,0 +1,4 @@
+KERNEL=="mmcblk[0-9]p[0-9]*", SUBSYSTEM=="block", ACTION=="add", RUN+="/usr/local/bin/disk-mount.sh add %k"
+KERNEL=="mmcblk[0-9]p[0-9]*", SUBSYSTEM=="block", ACTION=="remove", RUN+="/usr/local/bin/disk-mount.sh remove %k"
+#KERNEL=="mmcblk[0-9]p[0-9]*", SUBSYSTEM=="block", ACTION=="add", RUN+="/usr/bin/logger add----%k"
+#KERNEL=="mmcblk[0-9]p[0-9]*", SUBSYSTEM=="block", ACTION=="remove", RUN+="/usr/bin/logger remove--%k"

@@ -1,0 +1,119 @@
+#!/usr/bin/env groovy
+
+String DEFAULT_BUILD_NAME = 'ADAM3600'
+String DEFAULT_PART_NUMBER = 'ADAM-3600-C2GL1A1E'
+String DEFAULT_TOOLCHAIN_PATH = '/opt/ti-processor-sdk-linux-rt-am335x-evm-04.03.00.05/linux-devkit/sysroots/x86_64-arago-linux/usr/bin'
+String DEFAULT_KERNELDIR = '/jenkins/workspace/i_linux-4.9.69-9ce43c71ae_master'
+String DEFAULT_RT_ARG = 'NORT'
+String DEFAULT_PHP_ARG = 'PHP_NO'
+String DEFAULT_PYTHON_ARG = 'PYTHON_NO'
+
+properties([
+	parameters([
+		string(name: 'BUILD_NAME', defaultValue: DEFAULT_BUILD_NAME, description: '设备型号', trim: true),
+		string(name: 'PART_NUMBER', defaultValue: DEFAULT_PART_NUMBER, description: '设备料号', trim: true),
+		string(name: 'TOOLCHAIN_PATH', defaultValue: DEFAULT_TOOLCHAIN_PATH, description: '交叉编译工具链路径', trim: true),
+		string(name: 'KERNELDIR', defaultValue: DEFAULT_KERNELDIR, description: '交叉编译工具链路径', trim: true),
+		string(name: 'RT_ARG', defaultValue: DEFAULT_RT_ARG, description: '实时补丁参数，NORT 或 RT', trim: true),
+		string(name: 'PHP_ARG', defaultValue: DEFAULT_PHP_ARG, description: '是否包含PHP，PHP_NO 或 PHP_YES', trim: true),
+		string(name: 'PYTHON_ARG', defaultValue: DEFAULT_PYTHON_ARG, description: '是否包含Python，PYTHON_NO，PYTHON_2.7 或 PYTHON_3.6', trim: true),
+		booleanParam(name: 'REBUILD', defaultValue: false, description: 'Rebuild (Clean before build)'),
+		string(name: 'COMMENT', defaultValue: '', description: '在此输入此次编译的说明，如编译原因，发行对象等。', trim: false),
+	])
+])
+
+node( "linux" )
+{
+	def BUILD_NAME = params.BUILD_NAME ?: DEFAULT_BUILD_NAME
+	def PART_NUMBER = params.PART_NUMBER ?: DEFAULT_PART_NUMBER
+	def TOOLCHAIN_PATH = params.TOOLCHAIN_PATH ?: DEFAULT_TOOLCHAIN_PATH
+	def KERNELDIR = params.KERNELDIR ?: DEFAULT_KERNELDIR
+	def RT_ARG = params.RT_ARG ?: DEFAULT_RT_ARG
+	def PHP_ARG = params.PHP_ARG ?: DEFAULT_PHP_ARG
+	def PYTHON_ARG = params.PYTHON_ARG ?: DEFAULT_PYTHON_ARG
+	def REBUILD = params.REBUILD ?: false
+	def COMMENT = params.COMMENT ?: ''
+
+	def DRV_DIR = '_thirdparty'
+
+	if ( COMMENT.length() > 0 )
+	{
+		currentBuild.description = COMMENT;
+	}
+
+	echo "BUILD_NAME=${BUILD_NAME}"
+	echo "PART_NUMBER=${PART_NUMBER}"
+	echo "TOOLCHAIN_PATH=${TOOLCHAIN_PATH}"
+	echo "KERNELDIR=${KERNELDIR}"
+	echo "RT_ARG=${RT_ARG}"
+	echo "PHP_ARG=${PHP_ARG}"
+	echo "PYTHON_ARG=${PYTHON_ARG}"
+	echo "REBUILD=${REBUILD}"
+
+	stage( "Checkout" )
+	{
+		def LAST_BUILD_NAME = ''
+
+		if ( fileExists( "last_BUILD_NAME" ) )
+		{
+			LAST_BUILD_NAME = readFile "last_BUILD_NAME"
+			echo "LAST_BUILD_NAME=${LAST_BUILD_NAME}"
+		}
+
+		if ( BUILD_NAME != LAST_BUILD_NAME )
+		{
+			REBUILD = true
+		}
+
+		checkout scm
+
+		if ( REBUILD )
+		{
+			echo "clean up git working directory..."
+			sh "git reset --hard"
+			sh "git clean -dfx"
+		}
+
+		writeFile file: "last_BUILD_NAME", text: BUILD_NAME
+
+		echo 'checkout thirdparty driver repository'
+
+		dir( DRV_DIR )
+		{
+			deleteDir()
+		}
+
+		checkout([
+			scm: [
+				$class: 'GitSCM',
+				branches: [[name: BRANCH_NAME]],
+				extensions: [
+					[$class: 'RelativeTargetDirectory', relativeTargetDir: DRV_DIR ],
+				],
+				userRemoteConfigs: [[
+					credentialsId: '04ffcfc0-9347-4375-9de4-86fb9708346b',
+					url: "https://abjgitlab/linux/driver/thirdparty.git"
+				]]
+			]
+		])
+	}
+
+	env.PATH = "${env.PATH}:${TOOLCHAIN_PATH}"
+
+	stage( "Compile rootfs")
+	{
+		withEnv(["TMP_PATH=${WORKSPACE}/_tmp"])
+		{
+			sh """
+				./build_fs.sh ${BUILD_NAME} /home/root ${PART_NUMBER} ${RT_ARG} ${PHP_ARG} ${PYTHON_ARG} ${KERNELDIR} ${WORKSPACE}/${DRV_DIR}
+				mv -f rootfs.tar.gz  rootfs_root.tar.gz
+
+				./build_fs.sh ${BUILD_NAME} /home/sysuser ${PART_NUMBER} ${RT_ARG} ${PHP_ARG} ${PYTHON_ARG} ${KERNELDIR} ${WORKSPACE}/${DRV_DIR}
+				mv -f rootfs.tar.gz  rootfs_sysuser.tar.gz
+			"""
+
+			archiveArtifacts "ramdisk.gz"
+			archiveArtifacts "rootfs_*.tar.gz"
+		}
+	}
+}

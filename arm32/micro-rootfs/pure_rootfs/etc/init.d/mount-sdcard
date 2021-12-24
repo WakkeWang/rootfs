@@ -1,0 +1,20 @@
+#!/bin/sh
+
+devices="/dev/mmcblk0p1 /dev/mmcblk0p2 /dev/mmcblk0p3 /dev/mmcblk0p4 /dev/mmcblk1p1 /dev/mmcblk1p2 /dev/mmcblk1p3 /dev/mmcblk1p4 /dev/sda1 /dev/sda2 /dev/sda3 /dev/sda4 /dev/sdb1 /dev/sdb2 /dev/sdb3 /dev/sdb4 /dev/sdc1 /dev/sdc2 /dev/sdc3 /dev/sdc4"
+
+case "$1" in
+    start )
+        for d in $devices
+        do
+            DEVNAME=$d ACTION=add /etc/udev/scripts/mount.sh > /dev/null 2>&1
+        done
+    ;;
+    stop )
+        for d in $devices
+        do
+            DEVNAME=$d ACTION=remove /etc/udev/scripts/mount.sh > /dev/null 2>&1
+        done
+    ;;
+esac
+
+exit 0;

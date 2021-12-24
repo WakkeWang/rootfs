@@ -1,0 +1,18 @@
+#advimage=y will update uboot and kernel
+#advrootfs=y will recovery linux file system
+#advrecover=y will copy files to recovery partition
+#advfactory=y will restore factory default setting, if advpartition=y, then advfactory=n will ignore
+#advpath=/home/sysuser will setup EdgeLink application install path
+#advpartition=y will partition the entire disk
+#advrfsname=rootfs.tar.gz will setup root file system package name
+advimage=y
+advrootfs=y
+advrecover=n
+advfactory=y
+advpath=/home/sysuser
+advpartition=y
+advrfsname=rootfs.tar.gz
+
+#other config
+fdtaddr=0x88000000
+rdaddr=0x88080000

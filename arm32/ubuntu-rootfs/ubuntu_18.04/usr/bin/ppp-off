@@ -1,0 +1,62 @@
+#!/bin/bash
+######################################################################
+#
+# Determine the device to be terminated.
+#
+if [ "$1" = "" ]; then
+	DEVICE=ppp0
+else
+	DEVICE=$1
+fi
+
+if [ ${DEVICE} == "ppp0" ];then
+P0PID=`ps aux | grep pppd | grep -v "grep" | awk '$6=="default"||$6=="other"||$6=="unicom"||$6=="cmnet"||$6=="telecom"{print $1}'`
+echo ${P0PID}
+fi
+
+######################################################################
+#
+# If the ppp0 pid file is present then the program is running. Stop it.
+if [ -r /var/run/$DEVICE.pid ] || [ ! -z ${P0PID} ]; then
+        PID=`cat /var/run/$DEVICE.pid`
+	if [ -z ${PID} ];then
+		PID=${P0PID}	
+	fi
+	echo "kill" $PID
+        kill -15 $PID
+	sleep 1
+	timeout=5
+	kill -0 $PID
+	while [ $? -eq 0 ]
+	do
+		timeout=`expr $timeout - 1`
+		if [ $timeout -eq 0 ]
+		then
+			exit 1
+		fi
+		sleep 1
+		kill -0 $PID
+	done
+	
+	if [ $? -ne 0 ]
+	then
+		kill -9 $PID
+	fi
+#
+# If the kill did not work then there is no process running for this
+# pid. It may also mean that the lock file will be left. You may wish
+# to delete the lock file at the same time.
+        if [ ! "$?" = "0" ]; then
+                rm -f /var/run/$DEVICE.pid
+                echo "ERROR: Removed stale pid file"
+                exit 1
+        fi
+#
+# Success. Let pppd clean up its own junk.
+        echo "PPP link to $DEVICE terminated."
+        exit 0
+fi
+#
+# The ppp process is not running for ppp0
+echo "ERROR: PPP link is not active on $DEVICE"
+exit 1

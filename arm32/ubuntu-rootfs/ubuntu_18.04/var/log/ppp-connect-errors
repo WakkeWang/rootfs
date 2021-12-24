@@ -1,0 +1,31 @@
+timeout set to 30 seconds
+abort on (NO CARRIER)
+abort on (ERROR)
+abort on (NO DIALTONE)
+abort on (BUSY)
+abort on (NO ANSWER)
+send (AT^M)
+expect (OK)
+^M
+OK
+ -- got it
+
+send (ATZ^M)
+expect (OK)
+^M
+OK
+ -- got it
+
+send (AT+CGDCONT=1,"IP","3GNET",,0,0^M)
+expect (OK)
+^M^M
+OK
+ -- got it
+
+send (ATDT*99#^M)
+expect (CONNECT)
+^M^M
+CONNECT
+ -- got it
+
+send (^M)

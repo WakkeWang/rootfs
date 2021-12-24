@@ -1,0 +1,4 @@
+739d6887c8f3dd71a9168c614c07175c  /etc/ssh/sshd_config
+1b03acc84964cf70b8a584870bcdf9b3  /etc/rsyslog.d/50-default.conf
+1c261d6541420797f8b824d65ac5c197  /etc/apt/apt.conf.d/20auto-upgrades
+d56f6290b4879752b4d4ad18da21ec0d  /etc/apt/apt.conf.d/50unattended-upgrades

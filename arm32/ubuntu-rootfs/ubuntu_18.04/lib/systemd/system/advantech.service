@@ -1,0 +1,10 @@
+[Unit]
+Description=Advantech's program running
+After=network.target auditd.service
+
+[Service]
+ExecStart=/etc/init.d/advantech.sh
+Type=notify
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,3 @@
+/usr/sbin/fbset
+fbset.real 55
+../../bin/busybox 50
